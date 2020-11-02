@@ -1,12 +1,14 @@
 #!/bin/bash
 clear
 
-# GENERAL DRIVES (NVIDIA)
-sudo add-apt-repository ppa:graphics-drivers/ppa
-sudo dpkg --add-architecture i386 
-sudo apt update
+mkdir InstallFiles && cd InstallFiles
 
-sudo apt install libvulkan1 libvulkan1:i386
+# GENERAL DRIVES (NVIDIA)
+sudo add-apt-repository -y ppa:graphics-drivers/ppa
+sudo dpkg --add-architecture i386 
+sudo apt -y update
+
+sudo apt -y install libvulkan1 libvulkan1:i386
 
 
 # WINEHQ INSTALL
@@ -14,28 +16,31 @@ sudo apt install libvulkan1 libvulkan1:i386
 wget -nc https://dl.winehq.org/wine-builds/winehq.key
 sudo apt-key add winehq.key
 
-sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ groovy main'
+sudo add-apt-repository -y 'deb https://dl.winehq.org/wine-builds/ubuntu/ groovy main'
 
-sudo apt update
-sudo apt install --install-recommends winehq-stable
+sudo apt -y update
+sudo apt -y install --install-recommends winehq-stable
 
 
 # WINEHQ DRIVES
-sudo apt install winetricks
+sudo apt install -y winetricks
 
 
 # LUTRIS INSTALL
-sudo add-apt-repository ppa:lutris-team/lutris
-sudo apt update
-sudo apt install lutris
+sudo add-apt-repository -y ppa:lutris-team/lutris
+sudo apt -y update
+sudo apt -y install  lutris
 
 
 # STEAM INSTALL
-
-sudo apt-get install steam
+sudo apt -y install steam
 
 
 # CUSTOM PROTON INSTALL
 wget https://github.com/GloriousEggroll/proton-ge-custom/releases/download/5.9-GE-8-ST/Proton-5.9-GE-8-ST.tar.gz
 tar -xvzf Proton-5.9-GE-8-ST.tar.gz
-mv /Proton-5.9-GE-8-ST $HOME/.steam/root/compatibilitytools.d/Proton-5.9-GE-8-ST
+mv Proton-5.9-GE-8-ST $HOME/.steam/root/compatibilitytools.d/Proton-5.9-GE-8-ST
+
+
+# DELETE TMP FILES
+cd .. && rm -rf InstallFiles
