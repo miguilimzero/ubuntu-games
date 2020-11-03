@@ -28,10 +28,10 @@ sudo apt -y update
 wget http://ftp.br.debian.org/debian/pool/main/d/dxvk/dxvk_0.96+ds1-1_all.deb
 wget http://ftp.br.debian.org/debian/pool/main/d/dxvk/dxvk-wine64-development_0.96+ds1-1_amd64.deb
 
-sudo dpkg -i dxvk*
+sudo dpkg -y -i dxvk*
 sudo apt -y install -f
 
-cd /usr/lib/dxvk/wine64-development/ && ./setup_dxvk.sh
+cd /usr/lib/dxvk/wine64-development/ && ./setup_dxvk.sh install -y
 cd $HOME
 
 
