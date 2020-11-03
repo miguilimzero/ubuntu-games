@@ -48,7 +48,10 @@ sudo apt -y install steam
 # CUSTOM PROTON INSTALL
 wget https://github.com/GloriousEggroll/proton-ge-custom/releases/download/5.9-GE-8-ST/Proton-5.9-GE-8-ST.tar.gz
 tar -xvzf Proton-5.9-GE-8-ST.tar.gz
+
 mkdir -p $HOME/.steam/root/compatibilitytools.d
+rm -rf $HOME/.steam/root/compatibilitytools.d/Proton-5.9-GE-8-ST
+
 mv Proton-5.9-GE-8-ST $HOME/.steam/root/compatibilitytools.d
 
 
