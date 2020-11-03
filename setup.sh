@@ -16,7 +16,7 @@ sudo apt -y install libvulkan1 libvulkan1:i386
 wget -nc https://dl.winehq.org/wine-builds/winehq.key
 sudo apt-key add winehq.key
 
-sudo add-apt-repository -y 'deb https://dl.winehq.org/wine-builds/ubuntu/ groovy main'
+sudo add-apt-repository -y 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main'
 
 sudo apt -y update
 sudo apt -y install --install-recommends winehq-stable
