@@ -32,7 +32,7 @@ sudo dpkg -y -i dxvk*
 sudo apt -y install -f
 
 cd /usr/lib/dxvk/wine64-development/ && ./setup_dxvk.sh install -y
-cd $HOME
+cd $HOME/InstallFiles
 
 
 # LUTRIS INSTALL
