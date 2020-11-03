@@ -31,7 +31,7 @@ wget http://ftp.br.debian.org/debian/pool/main/d/dxvk/dxvk-wine64-development_0.
 sudo dpkg -y -i dxvk*
 sudo apt -y install -f
 
-cd /usr/lib/dxvk/wine64-development/ && ./setup_dxvk.sh install -y
+cd /usr/lib/dxvk/wine64-development/ && sudo ./setup_dxvk.sh install -y
 cd $HOME/InstallFiles
 
 
